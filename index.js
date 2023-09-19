@@ -207,16 +207,20 @@ function findStudentById(studentId, students) {
 ]
   **********/
 
+// function getStudentsByCourse(course, students) {
+//   let commonCourse = [];
+//   students.forEach((student) => {
+//     student.courses.forEach((c) => {
+//       if (c == course) {
+//         commonCourse.push(student);
+//       }
+//     });
+//   });
+//   return commonCourse;
+// }
+
 function getStudentsByCourse(course, students) {
-  let commonCourse = [];
-  students.forEach((student) => {
-    student.courses.forEach((c) => {
-      if (c == course) {
-        commonCourse.push(student);
-      }
-    });
-  });
-  return commonCourse;
+  return students.filter((student) => student.courses.includes(course));
 }
 
 console.log(getStudentsByCourse("Music", students));
